@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KubeTre - Visualize your Kubernetes resources and understand every connection.">
+  <title>KubeTre | Kubernetes Visualization</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      background: radial-gradient(circle at top left, #351052, #12051f 65%);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+    main { max-width: 750px; }
+    .brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .symbol {
+      width: 70px;
+      height: 70px;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-size: clamp(36px, 7vw, 64px);
+      font-weight: 750;
+      letter-spacing: -2px;
+    }
+    .tre {
+      background: linear-gradient(90deg, #ff8a24, #ec39b2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    h1 {
+      font-size: clamp(26px, 5vw, 44px);
+      margin: 0 0 18px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #cfc6dc;
+    }
+    .status {
+      display: inline-block;
+      margin: 22px 0;
+      padding: 10px 20px;
+      border: 1px solid #71418d;
+      border-radius: 40px;
+      color: #f5c9e7;
+      font-size: 14px;
+    }
+    .links { margin-top: 26px; }
+    .links a {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 9px;
+      background: linear-gradient(90deg, #923cff, #ee43a4);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 70px;
+      color: #a99bb9;
+      font-size: 13px;
+    }
+    @media (max-width: 420px) {
+      .brand { gap: 10px; }
+      .symbol { width: 52px; height: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <svg class="symbol" viewBox="0 0 100 100"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-label="KubeTre symbol">
+        <defs>
+          <linearGradient id="gradient" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#9b43ff"/>
+            <stop offset="55%" stop-color="#ed43a5"/>
+            <stop offset="100%" stop-color="#ff921e"/>
+          </linearGradient>
+        </defs>
+        <path d="M20 82 A44 44 0 1 1 80 82"
+              fill="none" stroke="url(#gradient)"
+              stroke-width="9" stroke-linecap="round"/>
+        <path d="M36 72 A26 26 0 1 1 64 72"
+              fill="none" stroke="url(#gradient)"
+              stroke-width="9" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="9" fill="url(#gradient)"/>
+      </svg>
+      <div class="brand-name">Kube<span class="tre">Tre</span></div>
+    </div>
+
+    <h1>See your cluster.<br>Understand every connection.</h1>
+
+    <p>
+      KubeTre is an open-source Kubernetes visualization tool
+      designed to help developers explore cluster resources,
+      inspect relationships, and understand their infrastructure.
+    </p>
+
+    <div class="status">Coming Soon</div>
+
+    <div class="links">
+      <a href="https://github.com/kubetre">
+        Follow on GitHub
+      </a>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> KubeTre.
+      Built for the Kubernetes community.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
